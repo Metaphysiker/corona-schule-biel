@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'devise-i18n'
+gem 'devise'
 gem 'simple_form'
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -5,10 +5,17 @@
       <div class="alert alert-success" role="alert">
         Es hat noch Plätze!
       </div>
+      <% if user_signed_in? %>
+        <%= link_to "Kurs schliessen", change_status_path(course), method: :post, class: "btn btn-info" %>
+      <% end %>
+
     <% else %>
       <div class="alert alert-danger" role="alert">
         Es hat leider keine Plätze mehr.
       </div>
+      <% if user_signed_in? %>
+        <%= link_to "Kurs öffnen", change_status_path(course), method: :post, class: "btn btn-info" %>
+      <% end %>
     <% end %>
     <hr />
     <p>
@@ -43,5 +50,11 @@
     <p class="card-text">
       <%= simple_format(course.description) %>
     </p>
+
+    <% if user_signed_in? %>
+    <hr />
+      <%= link_to "Bearbeiten", edit_course_path(course), class: "btn btn-primary" %><br /><br />
+      <%= link_to 'Löschen', course_path(course), method: :delete, data: {confirm: 'Bist du sicher?'}, class: "btn btn-danger" %><br />
+    <% end %>
   </div>
 </div>
