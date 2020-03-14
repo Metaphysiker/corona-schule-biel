@@ -8,12 +8,16 @@ class CoursesController < ApplicationController
   end
 
   def closed_courses
-    @courses = Course.past
+    #@courses = Course.past
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+  end
+
+  def my_courses
+    @courses = Course.where(user_id: current_user.id)
   end
 
   # GET /courses/new
@@ -29,6 +33,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
+    @course.user_id = current_user.id
 
     respond_to do |format|
       if @course.save

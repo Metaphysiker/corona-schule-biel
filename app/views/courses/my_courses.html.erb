@@ -1,0 +1,7 @@
+<div class="container">
+    <h3 class="text-center mt-2">Meine Kurse</h3>
+    <%= link_to "Neuen Kurs erstellen", new_course_path, class: "btn btn-primary" %>
+    <hr />
+
+  <%= render 'courses/courses_in_groups_of_3', courses: @courses %>
+</div>

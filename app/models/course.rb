@@ -1,5 +1,8 @@
 class Course < ApplicationRecord
 
+  belongs_to :user
+
+
   def self.statuses
     ["open", "closed"]
   end
