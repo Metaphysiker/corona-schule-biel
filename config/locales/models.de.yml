@@ -1,0 +1,8 @@
+de:
+  activerecord:
+    models:
+      course:
+        one: "Kurs"
+        other: "Kurse"
+    attributes:
+      course:

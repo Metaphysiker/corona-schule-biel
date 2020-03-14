@@ -1,0 +1,7 @@
+<div class="row">
+  <% courses.each do |course| %>
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+      <%= render 'courses/show', course: course %>
+    </div>
+  <% end %>
+</div>

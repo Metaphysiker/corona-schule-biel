@@ -1,0 +1,15 @@
+
+  <%= simple_form_for course do |f| %>
+    <%#= f.input :title %>
+    <%= f.input :start_time, label: "Kurs beginnt um: " %>
+    <%= f.input :end_time, label: "Kurs endet um: " %>
+    <%= f.input :target_group, label: 'Zielpublikum in Jahren (z.B. "6-8"): ' %>
+    <%= f.input :subject, label: "Thema (auf deutsch oder auf französisch):" %>
+    <%= f.input :organizer, label: "Wer führt den Kurs durch (Vorname, Nachname): " %>
+    <%= f.input :location, label: "Ort" %>
+    <%= f.input :phone_number, label: "Anmeldung per SMS bei (Handynummer): " %>
+    <%= f.input :description, label: "Bemerkungen (mitnehmen etc.):" %>
+    <%#= f.input :email %>
+
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>

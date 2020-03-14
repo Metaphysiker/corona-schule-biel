@@ -1,0 +1,47 @@
+<div class="card rounded border m-2">
+  <div class="card-body">
+    <h4 class="card-title"><%= course.subject %></h4>
+    <% if course.status == "open" %>
+      <div class="alert alert-success" role="alert">
+        Es hat noch Plätze!
+      </div>
+    <% else %>
+      <div class="alert alert-danger" role="alert">
+        Es hat leider keine Plätze mehr.
+      </div>
+    <% end %>
+    <hr />
+    <p>
+      <strong>Kurs beginnt um: </strong><%= l(course.start_time, format: :long) %>
+      <br />
+      <strong>Kurs endet um: </strong><%= l(course.end_time, format: :long) %>
+    </p>
+    <hr />
+    <p>
+      <strong>Zielpublikum in Jahren: </strong><%= course.target_group %>
+    </p>
+    <hr />
+    <p>
+      <strong>Kurs wird durchgeführt von: </strong> <%= course.organizer %>
+    </p>
+    <hr />
+    <p>
+      <strong>Ort: </strong>
+      <br />
+      <%= simple_format(course.location) %>
+    </p>
+    <hr />
+    <p>
+      <strong>Anmeldung per SMS bei (Handynummer): </strong><br />
+      <%= course.phone_number  %>
+      <%#= mail_to course.email, course.email %>
+    </p>
+    <hr />
+    <p>
+      <strong>Bemerkungen </strong>
+    </p>
+    <p class="card-text">
+      <%= simple_format(course.description) %>
+    </p>
+  </div>
+</div>

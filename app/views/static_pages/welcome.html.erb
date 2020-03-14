@@ -1,4 +1,21 @@
 <div class="container">
-  <h1>StaticPages#welcome</h1>
-  <p>Find me in app/views/static_pages/welcome.html.erb</p>
+    <div class="jumbotron my-3">
+    <h3 class="text-center">Corona-Schule Biel</h3>
+    <hr />
+    <p class="lead text-justify">
+      <strong>
+        Wir organisieren den Schulunterricht selbst. Teilnehmen können Kinder, die nicht ansteckend sind (höchstens 5-6 Kinder pro Kurs).
+      </strong>
+      <br />
+      <br />
+      Deutsch angekündigte Kurs werden auf Deutsch durchgeführt, Französisch angekündigte auf Französisch. Jede Unterrichtsperson entscheidet selbst, welche und wieviele Anmeldungen berücksichtigt werden, bevor der Kurs geschlossen wird.
+      <br />
+      <br />
+      Kinder sollen pünklich gebracht und abgeholt werden. Versicherung etc. ist Sache der Eltern.</p>
+  </div>
+
+      <h3 class="text-center">Offene Kurse</h3>
+      <hr />
+
+  <%= render 'courses/courses_in_groups_of_3', courses: @courses %>
 </div>
