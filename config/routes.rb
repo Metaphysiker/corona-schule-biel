@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contents
   devise_for :users
   resources :courses
   #get 'static_pages/welcome'

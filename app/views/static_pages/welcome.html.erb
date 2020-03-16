@@ -1,17 +1,33 @@
 <div class="container">
     <div class="jumbotron my-3">
-    <h3 class="text-center">Corona-Schule Biel</h3>
-    <hr />
-    <p class="lead text-justify">
-      <strong>
-        Wir organisieren den Schulunterricht selbst. Teilnehmen können Kinder, die nicht ansteckend sind (höchstens 5-6 Kinder pro Kurs).
-      </strong>
-      <br />
-      <br />
-      Deutsch angekündigte Kurs werden auf Deutsch durchgeführt, Französisch angekündigte auf Französisch. Jede Unterrichtsperson entscheidet selbst, welche und wieviele Anmeldungen berücksichtigt werden, bevor der Kurs geschlossen wird.
-      <br />
-      <br />
-      Kinder sollen pünklich gebracht und abgeholt werden. Versicherung etc. ist Sache der Eltern.</p>
+      <% unless Content.first.nil? %>
+      <h3 class="text-center"><%= Content.first.title %></h3>
+      <hr />
+      <p class="lead text-justify">
+        <%= simple_format(Content.first.text) %>
+      </p>
+
+        <% if user_signed_in? %>
+          <%= link_to "Text bearbeiten", edit_content_path(Content.first), class: "btn btn-primary" %>
+        <% end %>
+      <% else %>
+
+      <h3 class="text-center">Corona-Schule Biel</h3>
+      <hr />
+      <p class="lead text-justify">
+        <strong>
+          Wir organisieren den Schulunterricht selbst. Teilnehmen können Kinder, die nicht ansteckend sind (höchstens 5-6 Kinder pro Kurs).
+        </strong>
+        <br />
+        <br />
+        Deutsch angekündigte Kurs werden auf Deutsch durchgeführt, Französisch angekündigte auf Französisch. Jede Unterrichtsperson entscheidet selbst, welche und wieviele Anmeldungen berücksichtigt werden, bevor der Kurs geschlossen wird.
+        <br />
+        <br />
+        Kinder sollen pünklich gebracht und abgeholt werden. Versicherung etc. ist Sache der Eltern.</p>
+      <% end %>
+
+
+
   </div>
 
       <h3 class="text-center">Offene Kurse</h3>
